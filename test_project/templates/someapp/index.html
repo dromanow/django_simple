@@ -1,0 +1,21 @@
+{{ user.name }} {{ user.age }}
+
+<table>
+    <tr>
+        <th>
+            id
+        </th>
+        <th>
+            value
+        </th>
+    </tr>
+    {% for object in object_list %}
+        <tr>
+            <td>{{object.id}}</td>
+            <td>{{object.value}}</td>
+            <td>{{object.other.value}}</td>
+            <td>{% for o in object.other1.all %} {{o.value}} {% endfor %}</td>
+        </tr>
+    {% endfor %}
+
+</table>
