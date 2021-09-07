@@ -1,6 +1,12 @@
 from django.db import models
 from django.contrib.sites.models import Site
-from django.contrib.sites.managers import CurrentSiteManager
+from django.dispatch import receiver
+from .hit_count import some_signal
+
+
+@receiver(some_signal)
+def print_some_signal(sender, **kwargs):
+    pass
 
 
 class SomeOtherModel(models.Model):
